@@ -1,0 +1,410 @@
+:root {
+  --primary-color: #2d3436;
+  --secondary-color: #e74c3c;
+  --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --card-shadow: 0 4px 6px rgba(176, 145, 145, 1);
+}
+
+.profile-page {
+  background: var(--background-gradient);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100vw;
+  justify-items: center;
+  min-height: fit-content;
+}
+
+.profile-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.edit-btn, .logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #f0f2f5;
+  color: #2d3436;
+  border: 1px solid #d3d9dd;
+}
+
+.edit-btn:hover {
+  background-color: #e1e4e7;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.logout-btn:hover {
+  background-color: #c44132;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.profile-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.user-info-card {
+  background: transparent;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  margin-top: 3rem;
+}
+
+.avatar-section {
+  text-align: center;
+  margin-bottom: 2rem 0;
+  
+}
+
+.avatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fbcfcf;
+}
+
+.user-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #FF847C;
+  transition: all 0.3s ease;
+}
+
+.avatar-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #F6D365;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user-details {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.detail-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.detail-value {
+  color: #127fa7;
+}
+
+.bio-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #127fa7;
+}
+
+.library-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.section-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+  justify-content: center;
+}
+
+.tab-btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  background: none;
+  font-weight: 600;
+  color: #7f8c8d;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  color: var(--secondary-color);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--secondary-color);
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.book-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.episode-badge {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.book-title {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.book-author {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.current-ep {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.total-eps {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.admin-panel-link {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .section-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/*navbar*/
+.navButton {
+  margin-right: 15px;
+  padding: 8px 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: #c1d6ec;
+  transform: translateY(-2px);
+}
+
+/* Profile Page Adjustments */
+.profile-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Footer Styles */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add to Profile.css */
+.user-icon {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  margin-left: 15px;
+}
+
+.user-icon:hover {
+  color: #c1d6ec;
+  transform: scale(1.1);
+}
+
+/* Existing navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+}
+
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navButton {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.bell-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.notification-icon:hover .notification-dropdown {
+  display: block;
+}
+
+.notification-item {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.no-notifications {
+  padding: 10px;
+  text-align: center;
+}
+/* Add to Profile.css */
+.request-card {
+  background: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-controls button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.status-accepted { color: green; }
+.status-rejected { color: red; }
+.status-pending { color: orange; }

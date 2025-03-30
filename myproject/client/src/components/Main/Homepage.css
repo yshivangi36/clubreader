@@ -1,0 +1,199 @@
+:root {
+	--deep-purple: #2A0944;
+	--neon-pink: #ff0077a0;
+	--electric-blue: #3FA796;
+	--acid-green: #A8E10C;
+	--dark-bg: #0F0E0E;
+	--text-primary: #F5F5F5;
+  }
+  
+  /* Base Container */
+  .cyberpunk-container {
+	background: #f8f9fa;
+	min-height: 100vh;
+  }
+  
+  /* Image Slider Styles */
+  .card-slider-container {
+	position: relative;
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  background-color:#eef1f5;
+  }
+  
+  .slider-track {
+	position: relative;
+	display: flex;
+	height: 100%;
+	transition: transform 0.5s ease-in-out;
+  }
+
+  .slide-card-container {
+	flex: 0 0 100%;
+	display: flex;
+	justify-content: center;
+  }
+  
+  .slide-card {
+	border-radius: 15px;
+	padding: 15px;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+	width: 100%;
+	min-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .slide-card.active {
+	width: 50%;
+	height: 100%;
+	left: 25%;
+	top: 0;
+	z-index: 3;
+	box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+
+  .slide-card.prev {
+	transform: translateX(-75%) scale(0.9);
+	opacity: 0.8;
+	z-index: 2;
+  }
+  
+  .slide-card.next {
+	transform: translateX(75%) scale(0.9);
+	opacity: 0.8;
+	z-index: 2;
+  }
+  
+  .slide-card img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	object-fit:contain;
+	padding: 1rem;
+	transition: transform 0.4s ease;
+  }
+  
+  /* Slider Navigation Dots */
+  .slider-nav {
+	display: flex;
+  justify-content: center;
+  margin-top: 10px;
+	position: absolute;
+	bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+  }
+  
+  .nav-dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: rgba(204, 199, 199, 0.4);
+  border: 2px solid transparent;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  .nav-dot.active {
+	background: var(--neon-pink);
+	border-color: var(--neon-pink);
+	transform: scale(1.3);
+  }
+
+   .homepage-clubs .section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2rem;
+	padding: 0 1rem;
+	color: var(--electric-blue);
+  }
+  
+  .homepage-clubs .book-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+	padding: 0 1rem;
+  }
+  
+  .homepage-clubs .see-all-btn {
+	background: none;
+	border: none;
+	color: var(--electric-blue);
+	font-size: 1.5rem;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+  }
+  
+  .homepage-clubs .see-all-btn:hover {
+	color: #3FA796;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	.card-slider-container {
+		height: 50vh;
+	  }
+
+	.slide-card img {
+	  height: 300px;
+	}
+  
+	.book-grid {
+	  grid-template-columns: 1fr;
+	}
+}
+  
+  .homepage-clubs .club-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	max-width: 1500px;
+  }
+  
+  .homepage-clubs .club-card {
+	border: 2px solid var(--neon-pink);
+	height: 220px;
+  }
+
+  .homepage-clubs .club-content{
+	color: #0F0E0E;
+  }
+  
+  .homepage-clubs .club-description {
+	color: rgba(33, 31, 31, 0.9) !important;
+  }
+  
+  /* Keep original club page styles intact */
+  .clubs-section:not(.homepage-clubs) {
+	/* Original light theme styles */
+	background: #f8f9fa;
+  }
+  
+  .clubs-section:not(.homepage-clubs) .club-card {
+	/* Original light theme card styles */
+	background: white;
+	border-color: #ddd;
+  }
+
+  .homepage-clubs .section-divider {
+	border-top: 1px solid var(--neon-pink);
+	width: 90%;
+	box-shadow: 0 0 15px rgba(255, 0, 117, 0.3);
+  }
+  
+  .homepage-clubs .section-title{
+	margin-top: 0;
+	color: var(--electric-blue);
+  }

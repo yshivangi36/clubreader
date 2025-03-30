@@ -1,0 +1,291 @@
+/* AdminRequestsPage.css */
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  height: auto;
+}
+
+/* Loading and Error States */
+.loading-spinner {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error-message {
+  background-color: #ffe3e3;
+  color: #dc3545;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  background-color: white;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Tab Styling */
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-buttons button {
+  background: #e9ecef;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #495057;
+  cursor: pointer;
+}
+
+.tab-buttons button:hover {
+  background: #dee2e6;
+}
+
+.tab-buttons button.active {
+  background: #3b5bdb;
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 91, 219, 0.2);
+}
+
+/* Request Cards */
+.request-list {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-height: 60vh; /* Adjust based on your needs */
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar Styling */
+.request-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.request-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.request-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.request-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.request-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: transform 0.2s ease;
+}
+
+.request-card:hover {
+  transform: translateY(-2px);
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e9ecef;
+}
+
+.request-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #212529;
+}
+
+.request-info p {
+  color: #495057;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Status Styles */
+.status-approved {
+  color: #2b8a3e;
+  font-weight: 500;
+}
+
+.status-rejected {
+  color: #c92a2a;
+  font-weight: 500;
+}
+
+.status-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.status-controls button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.status-controls button:first-child {
+  background: #2b8a3e;
+  color: white;
+}
+
+.status-controls button:last-child {
+  background: #c92a2a;
+  color: white;
+}
+
+.status-controls button:hover {
+  opacity: 0.9;
+}
+
+/* Popup Styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  animation: popupEnter 0.3s ease;
+}
+
+@keyframes popupEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-content h3 {
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.popup-content textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin: 1rem 0;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.popup-content textarea:focus {
+  outline: none;
+  border-color: #3b5bdb;
+  box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.1);
+}
+
+.popup-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.popup-buttons button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.popup-buttons button:first-child {
+  background: #c92a2a;
+  color: white;
+}
+
+.popup-buttons button:last-child {
+  background: #495057;
+  color: white;
+}
+
+.popup-buttons button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .request-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .user-avatar {
+    justify-self: center;
+  }
+
+  .tab-buttons {
+    gap: 0.25rem;
+  }
+
+  .tab-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}

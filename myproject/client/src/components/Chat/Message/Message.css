@@ -1,0 +1,181 @@
+.message-container {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .message-user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .message-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .message-username {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .message-text {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+  }
+  
+  .own .message-text {
+    background: #4caf50;
+    color: white;
+  }
+/* Message container */
+.message-item {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+  
+  /* Profile Image */
+  .profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* ✅ Makes it round */
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  /* Message Bubble */
+  .message-bubble {
+    width: 100vw;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f1f1f1;
+    position: relative;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  /* If it's the logged-in user's message */
+  .own-message {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+  }
+  
+  .own-message .profile-img {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  
+  .own-message .message-bubble {
+    background: #daecff;
+    color: white;
+  }
+  
+  /* Message Username */
+  .message-username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* Message Text */
+  .message-text {
+    margin: 5px 0;
+  }
+  
+  /* Timestamp */
+  .message-timestamp {
+    font-size: 12px;
+    color: gray;
+    display: block;
+    text-align: right;
+  }
+  .message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Username */
+.message-username {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Message Text */
+.message-text {
+  margin: 5px 0;
+}
+
+/* Timestamp */
+.message-timestamp {
+  font-size: 12px;
+  color: gray;
+  display: block;
+  text-align: right;
+}
+
+.message-container:hover .dropdown-button {
+  opacity: 1 !important;
+  visibility: visible;
+}
+  
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 25px; /* Position below the header */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Higher z-index */
+}
+
+.dropdown-button {
+  background: none;
+  visibility: hidden;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  z-index: 10;
+}
+  
+  .dropdown-item {
+    display: block;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  .dropdown-item:hover {
+    background: #f0f0f0;
+  }
+  
+  .dropdown-item.delete {
+    color: red;
+  }
+
+.deleted-message-notice {
+  color: #666;
+  font-style: italic;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin: 5px 0;
+}

@@ -1,0 +1,309 @@
+.chatbot-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+  }
+  
+  .chatbot-launcher {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .chatbot-launcher:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+  
+  .bot-avatar {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background: #ff4757;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .chatbot-container {
+    width: 350px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .chatbot-header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ai-title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ai-status {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .chatbot-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background: rgba(245, 245, 245, 0.6);
+  }
+  
+  .message-bubble {
+    margin: 10px 0;
+    max-width: 80%;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+  }
+  
+  .message-bubble.user {
+    margin-left: auto;
+  }
+  
+  .message-bubble.bot {
+    margin-right: auto;
+  }
+  
+  .message-content {
+    padding: 12px 18px;
+    border-radius: 20px;
+    line-height: 1.4;
+    position: relative;
+  }
+  
+  .message-bubble.user .message-content {
+    background: #6e8efb;
+    color: white;
+    border-radius: 20px 20px 5px 20px;
+  }
+  
+  .message-bubble.bot .message-content {
+    background: white;
+    color: #333;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    border-radius: 20px 20px 20px 5px;
+  }
+  
+  .quick-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .action-btn {
+    background: rgba(110, 142, 251, 0.1);
+    border: 1px solid #6e8efb;
+    color: #6e8efb;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .action-btn:hover {
+    background: #6e8efb;
+    color: white;
+  }
+  
+  .typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    background: #ddd;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite;
+  }
+  
+  .dot:nth-child(2) { animation-delay: 0.2s; }
+  .dot:nth-child(3) { animation-delay: 0.4s; }
+  
+  .chatbot-input {
+    display: flex;
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid #eee;
+  }
+  
+  .chatbot-input input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+  
+  .chatbot-input input:focus {
+    outline: none;
+    border-color: #6e8efb;
+    box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.2);
+  }
+  
+  .send-btn {
+    background: #6e8efb;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .send-btn:hover {
+    background: #5a7de3;
+    transform: rotate(90deg) scale(1.1);
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes slideInRight {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  .book-recommendations {
+    margin-top: 1rem;
+    border-left: 3px solid #6e8efb;
+    padding-left: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .book-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  }
+
+  .book-card:last-child {
+    border-bottom: none;
+  }  
+  
+  .book-card h4 {
+    margin: 0 0 0.5rem;
+    color: #2d3436;
+  }
+  
+  .author {
+    margin: 0 0 0.25rem;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+  
+  .rating {
+    color: #f39c12;
+    font-weight: bold;
+  }
+
+  .genre-suggestions {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .genre-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  
+  .genre-tag {
+    background: rgba(110, 142, 251, 0.1);
+    border: 1px solid #6e8efb;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .genre-tag:hover {
+    background: #6e8efb;
+    color: white;
+  }
